@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^2/', views.template_two),
     url(r'^3/', views.template_three),
     url(r'^list/', views.list),
+    url(r'^json/', views.json),
 ]
