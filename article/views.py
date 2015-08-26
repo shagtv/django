@@ -1,8 +1,10 @@
-from django.http.response import HttpResponse, JsonResponse
+from django.core.exceptions import ObjectDoesNotExist
+from django.http.response import HttpResponse, Http404
 from django.shortcuts import render_to_response
 from django.template.loader import get_template
 from django.template import Context
 from django.core import serializers
+
 from article.models import Article
 
 
@@ -29,7 +31,11 @@ def list(request):
 
 
 def get(request, article_id):
-    return render_to_response('get.twig', {'article': Article.objects.get(id=article_id)})
+    try:
+        article = Article.objects.get(id=article_id)
+    except ObjectDoesNotExist:
+        raise Http404
+    return render_to_response('get.twig', {'article': article})
 
 
 def json(request):
