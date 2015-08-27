@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block article %}
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Brand</th>
+			<th>Number</th>
+			<th>NumberFix</th>
+		</tr>
+		{% for article in articles %}
+			<tr>
+				<td><a href="/parts/get/{{ article.id }}/">{{ article.id }}</a></td>
+				<td>{{ article.brand }}</td>
+				<td>{{ article.number }}</td>
+				<td>{{ article.number_fix }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+	<div class="pagination">
+    <span class="step-links">
+        {% if articles.has_previous %}
+			<a href="?page={{ articles.previous_page_number }}">previous</a>
+		{% endif %}
+
+		<span class="current">
+            Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+        </span>
+
+		{% if articles.has_next %}
+			<a href="?page={{ articles.next_page_number }}">next</a>
+		{% endif %}
+    </span>
+	</div>
+{% endblock %}

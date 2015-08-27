@@ -27,7 +27,7 @@ def template_three(request):
 
 
 def list(request):
-    return render_to_response('list.twig', {'articles': Article.objects.all()})
+    return render_to_response('list.html', {'articles': Article.objects.all()})
 
 
 def get(request, article_id):
@@ -35,7 +35,7 @@ def get(request, article_id):
         article = Article.objects.get(id=article_id)
     except ObjectDoesNotExist:
         raise Http404
-    return render_to_response('get.twig', {'article': article})
+    return render_to_response('get.html', {'article': article})
 
 
 def json(request):

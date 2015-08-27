@@ -17,6 +17,6 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
-    #url(r'^get/(?P<article_id>\d+)/', views.get),
-    #url(r'^', views.list),
+    url(r'^get/(?P<article_id>\d+)/', views.get),
+    url(r'^', views.list),
 ]

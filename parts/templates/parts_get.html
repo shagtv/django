@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block article %}
+	<table>
+		<tr>
+			<th>Id</th>
+			<td>{{ article.id }}</td>
+		</tr>
+		<tr>
+			<th>Brand</th>
+			<td>{{ article.brand }}</td>
+		</tr>
+		<tr>
+			<th>Number</th>
+			<td>{{ article.number }}</td>
+		</tr>
+		<tr>
+			<th>NumberFix</th>
+			<td>{{ article.number_fix }}</td>
+		</tr>
+	</table>
+{% endblock %}
