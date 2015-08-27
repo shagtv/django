@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    'parts'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,7 +73,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             'templates',
-            'article/templates',
+            'article/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -91,10 +92,20 @@ WSGI_APPLICATION = 'firstapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'django',
+        'USER': 'root',
+        'PASSWORD': '000000'
     }
 }
 
