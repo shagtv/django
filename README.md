@@ -1,4 +1,7 @@
 Install project:<br>
+
+0. sudo pip3 install git+https://github.com/multiplay/mysql-connector-python<br>
+   sudo pip3 install -e git+https://github.com/django-debug-toolbar/django-debug-toolbar.git#egg=django-debug-toolbar<br>
 1. sudo apt-get install python-setuptools<br>
 2. sudo easy_install virtualenv<br>
 3. virtualenv --no-site-packages djangoenv<br>
