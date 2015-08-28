@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'article',
     'parts'
 )
@@ -62,8 +63,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    #'django.middleware.cache.UpdateCacheMiddleware',
+    #'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ROOT_URLCONF = 'firstapp.urls'
@@ -112,16 +113,16 @@ DATABASES = {
     }
 }
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
-        'TIMEOUT': 60,
-        'OPTIONS': {
-            'MAX_ENTRIES': 10000
-        }
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#         'LOCATION': '127.0.0.1:11211',
+#         'TIMEOUT': 60,
+#         'OPTIONS': {
+#             'MAX_ENTRIES': 10000
+#         }
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

@@ -3,16 +3,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Django</title>
-    <link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" type="image/png" href="{% static "favicon.ico" %}"/>
+	<title>Django</title>
+	<link href="{% static "foundation/css/foundation.css" %}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1><a href="/">Auto parts</a></h1>
 
 <div class="row">
-{% block article %}
-{% endblock %}
+	{% block article %}
+	{% endblock %}
 </div>
 </body>
 </html>

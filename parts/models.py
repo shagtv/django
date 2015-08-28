@@ -46,8 +46,9 @@ class Article(models.Model):
 
     brand = models.ForeignKey(Brand)
     number = models.CharField(max_length=50)
-    number_fix = models.CharField(max_length=50)
+    number_fix = models.CharField(max_length=50, db_index=True)
     descr = models.TextField(default="", blank=True)
+    descr_en = models.TextField(default="", blank=True)
 
     def save(self, *args, **kwargs):
         self.number_fix = clear_name(self.number)

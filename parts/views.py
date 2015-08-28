@@ -7,8 +7,8 @@ from parts.models import Article
 
 
 def list(request):
-    articles = Article.objects.all()
-    paginator = Paginator(articles, 30)
+    articles = Article.objects.all().select_related('brand')
+    paginator = Paginator(articles, 10)
     page = request.GET.get('page')
     try:
         articles = paginator.page(page)
